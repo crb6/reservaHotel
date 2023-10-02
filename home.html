@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classe Cliente</title>
+</head>
+<body>
+    <form action="">
+        <label for="nome">Nome: </label>
+        <input type="text" id="nomeid" name="nome">
+        <br><br>
+        <label for="sobreNome">Sobrenome: </label>
+        <input type="text" id="sobrenomeid" name="sobreNome">
+        <br><br>
+        <label for="cpf">CPF: </label>
+        <input type="number" id="cpfid" name="cpf">
+        <br><br>
+        <label for="telefone">Telefone: </label>
+        <input type="number" id="telefoneid" name="telefone">
+        <br><br>
+        <label for="sexo">Sexo: </label>
+        <input type="text" id="sexoid" name="sexo">
+        <br><br>
+        <label for="nacionalidade">Nacionalidade: </label>
+        <input type="text" id="nacionalidadeid" name="nacionalidade">
+
+        <br><br>
+        <input type="submit" class="enviar" onclick="Cadastrar()" value="Enviar">
+    </form>
+    <script>
+        // Classe com função construtora
+        class Cliente{
+            constructor(){
+                this.nome = "";
+                this.sobreNome = "";
+                this.cpf = "";
+                this.telefone = "";
+                this.sexo = "";
+                this.nacionalidade = "";
+            }
+            // Encapsulamento - Métodos acessores GETTERS
+            get getNome(){
+                return this.nome;
+            }
+            get getSobreNome(){
+                return this.sobreNome;
+            }
+            get getCpf(){
+                return this.cpf;
+            }
+            get getTelefone(){
+                return this.telefone;
+            }
+            get getSexo(){
+                return this.sexo;
+            }
+            get getNacionalidade(){
+                return this.nacionalidade;
+            }
+
+            // Encapsulamento - Métodos acessores SETTERS
+            set setNome(value){
+                this.nome = value;
+            }
+            set setSobreNome(value){
+                this.sobreNome = value;
+            }
+            set setCpf(value){
+                this.cpf = value;
+            }
+            set setTelefone(value){
+                this.telefone = value;
+            }
+            set setSexo(value){
+                this.sexo = value;
+            }
+            set setNacionalidade(value){
+                this.nacionalidade = value;
+            }
+        }
+
+        // Função para cadastrar o cliente
+        function Cadastrar() {
+            let nomeCliente = document.getElementById("nomeid");
+            let sobreNomeCliente = document.getElementById("sobrenomeid");
+            let cpfCliente = document.getElementById("cpfid");
+
+            const cliente1 = new Cliente();
+            cliente1.nome = nomeCliente.value;
+            cliente1.sobreNome = sobreNomeCliente.value;
+            cliente1.cpf = cpfCliente.value;
+            alert("Cliente: " + cliente1.nome + " cadastrado(a) com sucesso!!!");
+            alert("Sobrenome é: " + cliente1.sobreNome);
+            alert("O CPF é: " + cliente1.cpf);
+        }
+    </script>
+</body>
+</html>
